@@ -51,7 +51,7 @@ export default function Lightbox({
       aria-modal="true"
     >
       <button
-        className="absolute right-4 top-4 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
+        className="absolute right-4 top-4 z-20 rounded-full bg-black/60 p-2.5 text-white shadow-lg ring-1 ring-white/20 transition-colors hover:bg-accent"
         onClick={onClose}
         aria-label="Close"
       >
@@ -60,7 +60,7 @@ export default function Lightbox({
 
       {multiple && (
         <button
-          className="absolute left-4 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20 sm:left-8"
+          className="absolute left-3 top-1/2 z-20 -translate-y-1/2 rounded-full bg-black/60 p-2.5 text-white shadow-lg ring-1 ring-white/20 transition-colors hover:bg-accent sm:left-6"
           onClick={(e) => {
             e.stopPropagation();
             prev();
@@ -75,13 +75,13 @@ export default function Lightbox({
       <img
         src={images[index]}
         alt={alt}
-        className="max-h-[85vh] max-w-[90vw] rounded-lg object-contain shadow-2xl"
+        className="max-h-[82vh] max-w-[78vw] rounded-lg object-contain shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       />
 
       {multiple && (
         <button
-          className="absolute right-4 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20 sm:right-8"
+          className="absolute right-3 top-1/2 z-20 -translate-y-1/2 rounded-full bg-black/60 p-2.5 text-white shadow-lg ring-1 ring-white/20 transition-colors hover:bg-accent sm:right-6"
           onClick={(e) => {
             e.stopPropagation();
             next();
@@ -93,7 +93,7 @@ export default function Lightbox({
       )}
 
       {multiple && (
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 rounded-full bg-white/10 px-3 py-1 text-sm text-white">
+        <div className="absolute bottom-6 left-1/2 z-20 -translate-x-1/2 rounded-full bg-black/60 px-3 py-1 text-sm text-white ring-1 ring-white/20">
           {index + 1} / {images.length}
         </div>
       )}
