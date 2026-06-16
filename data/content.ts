@@ -141,6 +141,104 @@ export const projects: Project[] = [
   },
 ];
 
+export type Credential = { role: string; username: string; password: string };
+
+export type FeaturedLink = {
+  label: string;
+  href: string;
+  variant: "primary" | "secondary";
+};
+
+export type FeaturedProject = {
+  name: string;
+  category: string;
+  status: "live" | "demo" | "desktop";
+  summary: string;
+  features: string[];
+  tech: string[];
+  image: string; // path under /public
+  links: FeaturedLink[];
+  credentials?: Credential[];
+  note?: string;
+};
+
+export const featuredProjects: FeaturedProject[] = [
+  {
+    name: "Smart Parcel Management System",
+    category: "Logistics Platform",
+    status: "live",
+    summary:
+      "End-to-end parcel intake and pickup platform for residential buildings. Designed, built, and deployed on Azure App Service with Azure SQL — covering staff intake, resident self-service pickup via QR, and full user management.",
+    features: [
+      "Parcel intake: staff scan barcode, photograph the item, and assign the recipient.",
+      "Resident flow: in-app delivery notification → system-generated QR code for pickup.",
+      "Staff scans the resident's QR, reviews parcel details, then dispenses with photo proof.",
+      "Role-based user management (admin, super admin, resident).",
+    ],
+    tech: ["C#", ".NET Core", "SQL Server", "Azure App Service", "Azure SQL"],
+    image: "/projects/parcel-dashboard.png",
+    links: [
+      {
+        label: "Live Demo",
+        href: "https://app-package-management-b4dzacd3edb7b2ed.southeastasia-01.azurewebsites.net/",
+        variant: "primary",
+      },
+    ],
+    credentials: [
+      { role: "Admin", username: "admin", password: "1234" },
+      { role: "Super Admin", username: "superadmin", password: "1234" },
+      { role: "Resident", username: "user", password: "1234" },
+    ],
+    note: "Deployed end-to-end by me on Microsoft Azure (App Service + SQL Database).",
+  },
+  {
+    name: "Herb Garden CMS & Live Site",
+    category: "CMS + Booking Platform",
+    status: "demo",
+    summary:
+      "A modern content platform for the Princess Maha Chakri Sirindhorn Herb Garden. Replaces a slow, outsourced workflow with a self-service back office connected to the public site through APIs — plus an integrated visit-booking system.",
+    features: [
+      "Self-service content management — staff update herbs, articles, news, and brochures without a developer.",
+      "Back office connected to the live site via REST APIs.",
+      "Visit / queue booking system with a monthly reservations dashboard.",
+      "Modern, maintainable stack replacing the legacy outsourced site.",
+    ],
+    tech: ["C#", ".NET Core", "REST APIs", "SQL Server", "CMS"],
+    image: "/projects/herb-dashboard.png",
+    links: [
+      {
+        label: "Current Live Site",
+        href: "http://ptt-herb.softbearit.com/",
+        variant: "primary",
+      },
+    ],
+    note: "Built for สวนสมุนไพรสมเด็จพระเทพรัตนราชสุดาฯ สยามบรมราชกุมารี. Back office + API-connected public site.",
+  },
+  {
+    name: "AI Risk & Test Recommendation",
+    category: "AI / Desktop Tool",
+    status: "desktop",
+    summary:
+      "A Python desktop tool that estimates regression-testing risk when a change request lands. Scores risk, recommends a manual-vs-automation ratio, and surfaces the highest-risk scenarios — a foundation model designed to learn CR impact on modules/features over time as data grows.",
+    features: [
+      "AI risk score from change type, requirement type, country, and impacted areas.",
+      "Recommended manual vs automation testing ratio.",
+      "Top high-risk scenarios surfaced automatically.",
+      "Test case list with priority, security, and platform coverage; export to Excel.",
+    ],
+    tech: ["Python", "PySide6 (Qt)", "pandas", "Risk model"],
+    image: "/projects/ai-risk-home.png",
+    links: [
+      {
+        label: "Download EXE",
+        href: "https://drive.google.com/file/d/1GtmEVjzsybMMxex6trnQ-b6gD5jN26Uq/view?usp=drive_link",
+        variant: "primary",
+      },
+    ],
+    note: "Windows desktop application (.exe). Foundation model intended to grow with more historical CR data.",
+  },
+];
+
 export const businessSkills: string[] = [
   "Requirements Gathering",
   "BRD Creation",
