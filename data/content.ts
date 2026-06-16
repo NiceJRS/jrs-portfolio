@@ -156,7 +156,7 @@ export type FeaturedProject = {
   summary: string;
   features: string[];
   tech: string[];
-  image: string; // path under /public
+  images: string[]; // paths under /public; first is the cover
   links: FeaturedLink[];
   credentials?: Credential[];
   note?: string;
@@ -176,7 +176,7 @@ export const featuredProjects: FeaturedProject[] = [
       "Role-based user management (admin, super admin, resident).",
     ],
     tech: ["C#", ".NET Core", "SQL Server", "Azure App Service", "Azure SQL"],
-    image: "/projects/parcel-dashboard.jpg",
+    images: ["/projects/parcel-main.jpg", "/projects/parcel-dashboard.jpg"],
     links: [
       {
         label: "Live Demo",
@@ -204,7 +204,11 @@ export const featuredProjects: FeaturedProject[] = [
       "Modern, maintainable stack replacing the legacy outsourced site.",
     ],
     tech: ["C#", ".NET Core", "REST APIs", "SQL Server", "CMS"],
-    image: "/projects/herb-dashboard.png",
+    images: [
+      "/projects/herb-dashboard.png",
+      "/projects/herb-cms.png",
+      "/projects/herb-livesite.png",
+    ],
     links: [
       {
         label: "Current Live Site",
@@ -227,7 +231,11 @@ export const featuredProjects: FeaturedProject[] = [
       "Test case list with priority, security, and platform coverage; export to Excel.",
     ],
     tech: ["Python", "PySide6 (Qt)", "pandas", "Risk model"],
-    image: "/projects/ai-risk-home.png",
+    images: [
+      "/projects/ai-risk-home.png",
+      "/projects/ai-risk-calculation.png",
+      "/projects/ai-risk-data-test.png",
+    ],
     links: [
       {
         label: "Download EXE",

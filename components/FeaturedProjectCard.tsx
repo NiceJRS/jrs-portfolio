@@ -7,8 +7,10 @@ import {
   KeyRound,
   Layers,
   ImageIcon,
+  Expand,
 } from "lucide-react";
 import type { FeaturedProject } from "@/data/content";
+import Lightbox from "./Lightbox";
 
 const statusLabel: Record<FeaturedProject["status"], string> = {
   live: "Live on Azure",
@@ -23,36 +25,79 @@ export default function FeaturedProjectCard({
   project: FeaturedProject;
   reversed: boolean;
 }) {
-  const [imgOk, setImgOk] = useState(true);
+  const [active, setActive] = useState(0);
+  const [broken, setBroken] = useState<Record<number, boolean>>({});
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const coverOk = !broken[active];
+  const hasThumbs = project.images.length > 1;
 
   return (
     <div className="grid items-center gap-8 rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 lg:grid-cols-2 lg:gap-12">
-      {/* Preview */}
+      {/* Gallery */}
       <div className={reversed ? "lg:order-2" : ""}>
-        <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-br from-navy to-slate-700">
-          {imgOk ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={project.image}
-              alt={`${project.name} screenshot`}
-              className="h-full w-full object-cover object-top"
-              onError={() => setImgOk(false)}
-            />
+        <button
+          type="button"
+          onClick={() => coverOk && setLightboxIndex(active)}
+          className="group relative block aspect-[16/10] w-full cursor-zoom-in overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-br from-navy to-slate-700"
+          aria-label="Enlarge image"
+        >
+          {coverOk ? (
+            <>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={project.images[active]}
+                alt={`${project.name} screenshot ${active + 1}`}
+                className="h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
+                onError={() => setBroken((b) => ({ ...b, [active]: true }))}
+              />
+              <span className="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors group-hover:bg-black/20">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1.5 text-xs font-semibold text-navy opacity-0 transition-opacity group-hover:opacity-100">
+                  <Expand size={14} /> Click to enlarge
+                </span>
+              </span>
+            </>
           ) : (
-            <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-slate-300">
+            <span className="flex h-full w-full flex-col items-center justify-center gap-2 text-slate-300">
               <ImageIcon size={32} />
               <span className="text-xs">{project.name}</span>
-            </div>
+            </span>
           )}
-          <div className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-black/60 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm">
+          <span className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-black/60 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm">
             <span
               className={`h-1.5 w-1.5 rounded-full ${
                 project.status === "desktop" ? "bg-amber-400" : "bg-emerald-400"
               } ${project.status !== "desktop" ? "animate-pulse" : ""}`}
             />
             {statusLabel[project.status]}
+          </span>
+        </button>
+
+        {hasThumbs && (
+          <div className="mt-3 flex gap-2">
+            {project.images.map((img, i) => (
+              <button
+                key={img}
+                type="button"
+                onClick={() => setActive(i)}
+                className={`relative aspect-[16/10] w-20 flex-shrink-0 overflow-hidden rounded-lg border-2 transition-colors ${
+                  i === active
+                    ? "border-accent"
+                    : "border-transparent opacity-60 hover:opacity-100"
+                }`}
+                aria-label={`View image ${i + 1}`}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={img}
+                  alt=""
+                  className="h-full w-full object-cover object-top"
+                  onError={() => setBroken((b) => ({ ...b, [i]: true }))}
+                />
+              </button>
+            ))}
           </div>
-        </div>
+        )}
       </div>
 
       {/* Content */}
@@ -147,6 +192,19 @@ export default function FeaturedProjectCard({
           <p className="mt-4 text-xs italic text-slate-500">{project.note}</p>
         )}
       </div>
+
+      {lightboxIndex !== null && (
+        <Lightbox
+          images={project.images}
+          index={lightboxIndex}
+          alt={project.name}
+          onClose={() => setLightboxIndex(null)}
+          onNavigate={(i) => {
+            setLightboxIndex(i);
+            setActive(i);
+          }}
+        />
+      )}
     </div>
   );
 }
