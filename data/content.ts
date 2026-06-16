@@ -176,7 +176,7 @@ export const featuredProjects: FeaturedProject[] = [
       "Role-based user management (admin, super admin, resident).",
     ],
     tech: ["C#", ".NET Core", "SQL Server", "Azure App Service", "Azure SQL"],
-    image: "/projects/parcel-dashboard.png",
+    image: "/projects/parcel-dashboard.jpg",
     links: [
       {
         label: "Live Demo",
