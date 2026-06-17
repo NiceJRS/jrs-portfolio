@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ImageIcon } from "lucide-react";
+import { ImageIcon, ExternalLink } from "lucide-react";
 import type { WorkProject } from "@/data/content";
 
 export default function WorkProjectCard({ project }: { project: WorkProject }) {
@@ -51,6 +51,23 @@ export default function WorkProjectCard({ project }: { project: WorkProject }) {
             </span>
           ))}
         </div>
+
+        {project.links && project.links.length > 0 && (
+          <div className="mt-4 flex flex-wrap gap-2 border-t border-slate-100 pt-4">
+            {project.links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 rounded-full bg-slate-50 px-2.5 py-1 text-xs font-medium text-accent transition-colors hover:bg-accent/10"
+              >
+                <ExternalLink size={10} />
+                {link.label}
+              </a>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

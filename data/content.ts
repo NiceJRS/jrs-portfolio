@@ -145,12 +145,15 @@ export const experiences: Experience[] = [
   },
 ];
 
+export type WorkProjectLink = { label: string; href: string };
+
 export type WorkProject = {
   name: string;
   description: string;
   contribution: string;
   image: string;
   tech: string[];
+  links?: WorkProjectLink[];
 };
 
 export type ProjectGroup = {
@@ -168,8 +171,9 @@ export const projectGroups: ProjectGroup[] = [
           "Modernized a legacy merchant platform supporting onboarding and installment services.",
         contribution:
           "Rebuilt a legacy system by analyzing existing business logic and re-implementing the platform from scratch using modern .NET technologies. Designed system integrations and data flows for financial services and merchant onboarding.",
-        image: "/projects/placeholder-wemerchant-arch.png",
+        image: "https://krungsriwemerchant.com/getattachment/e24d391f-6ec6-4fba-94da-3b838c254ab5/MCH-BannerDT.png",
         tech: [".NET", "C#", "REST APIs"],
+        links: [{ label: "krungsriwemerchant.com", href: "https://krungsriwemerchant.com/th-th" }],
       },
       {
         name: "E-Stamp Duty System",
@@ -177,7 +181,7 @@ export const projectGroups: ProjectGroup[] = [
           "High-reliability financial system integrating with Thailand Revenue Department APIs.",
         contribution:
           "Developed a banking system integrating with Thailand Revenue Department (RD) APIs for tax payment processing, reporting, and automated email notifications using Java.",
-        image: "/projects/placeholder-estamp-flow.png",
+        image: "/projects/e-stamp-duty.jfif",
         tech: ["Java", "RD API", "Reporting"],
       },
       {
@@ -186,8 +190,8 @@ export const projectGroups: ProjectGroup[] = [
           "Internal tool modernization using Python and .NET frameworks.",
         contribution:
           "Reverse-engineered a legacy VB.NET system and rebuilt it as a modern Windows Forms application based on observed system behavior and business workflows.",
-        image: "/projects/placeholder-sherry-app.png",
-        tech: ["VB.NET → WinForms", ".NET"],
+        image: "/projects/sherry-project.jfif",
+        tech: ["VB.NET → WinForms", ".NET", "Python"],
       },
       {
         name: "Kentico CMS Platform",
@@ -197,6 +201,12 @@ export const projectGroups: ProjectGroup[] = [
           "Developed, customized, and maintained multiple Kentico CMS-based systems, including code-level enhancements and CMS migrations driven by End-of-Life requirements.",
         image: "/projects/placeholder-kentico-cms.png",
         tech: ["Kentico CMS", ".NET", "C#"],
+        links: [
+          { label: "Lotus's Money", href: "https://www.lotussmoney.com/" },
+          { label: "First Choice", href: "https://www.firstchoice.co.th/lead-register-card" },
+          { label: "Central The 1 Card", href: "https://www.centralthe1card.com/" },
+          { label: "Krungsri Consumer", href: "https://www.krungsriconsumer.com/" },
+        ],
       },
     ],
   },
@@ -210,7 +220,8 @@ export const projectGroups: ProjectGroup[] = [
         contribution:
           "Architected sales functionalities and backend APIs, integrating seamlessly with the Flutter mobile application team.",
         image: "https://chococrm.com/wp-content/uploads/2024/03/Group-99508_web-1024x790.webp",
-        tech: ["C#", ".NET", "SQL Server", "Flutter integration"],
+        tech: ["C#", ".NET", "SQL Server", "Flutter integration", "Frontend"],
+        links: [{ label: "chococrm.com/pos", href: "https://chococrm.com/services/pos/" }],
       },
       {
         name: "ChocoCRM",
@@ -219,7 +230,8 @@ export const projectGroups: ProjectGroup[] = [
         contribution:
           "Oversaw .NET projects for user interfaces, admin apps, and web-based portals.",
         image: "https://chococrm.com/wp-content/uploads/2024/03/Group-117228_web-scaled.webp",
-        tech: ["C#", ".NET", "SQL Server"],
+        tech: ["C#", ".NET", "SQL Server", "Frontend"],
+        links: [{ label: "chococrm.com/crm", href: "https://chococrm.com/services/crm/" }],
       },
       {
         name: "ChocoBCRM Platform",
@@ -229,6 +241,7 @@ export const projectGroups: ProjectGroup[] = [
           "Managed Brand CRM, optimizing corporate projects focusing on privileges, customer relations, permissions, and inventory.",
         image: "https://chococrm.com/wp-content/uploads/2024/03/Group-119019_web-scaled.webp",
         tech: ["C#", ".NET", "SQL Server"],
+        links: [{ label: "chococrm.com/bcrm", href: "https://chococrm.com/solutions/bcrm/" }],
       },
     ],
   },
@@ -304,7 +317,7 @@ export const featuredProjects: FeaturedProject[] = [
     ],
     links: [
       {
-        label: "Current Live Site",
+        label: "Live Demo",
         href: "http://ptt-herb.softbearit.com/",
         variant: "primary",
       },
@@ -336,7 +349,7 @@ export const featuredProjects: FeaturedProject[] = [
         variant: "primary",
       },
     ],
-    note: "Windows desktop application (.exe). Foundation model intended to grow with more historical CR data.",
+    note: "Model Prototype — designed as a foundation that evolves as more historical change-request data is fed in. The more data it learns, the more accurate the risk scores and test recommendations become.",
   },
 ];
 
