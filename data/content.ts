@@ -148,7 +148,8 @@ export const experiences: Experience[] = [
 export type WorkProject = {
   name: string;
   description: string;
-  image: string; // placeholder path under /public
+  contribution: string;
+  image: string;
   tech: string[];
 };
 
@@ -164,23 +165,38 @@ export const projectGroups: ProjectGroup[] = [
       {
         name: "Krungsri WeMerchant Platform",
         description:
-          "Modernized a legacy merchant platform supporting onboarding and installment services. Rebuilt using modern .NET technologies.",
+          "Modernized a legacy merchant platform supporting onboarding and installment services.",
+        contribution:
+          "Rebuilt a legacy system by analyzing existing business logic and re-implementing the platform from scratch using modern .NET technologies. Designed system integrations and data flows for financial services and merchant onboarding.",
         image: "/projects/placeholder-wemerchant-arch.png",
         tech: [".NET", "C#", "REST APIs"],
       },
       {
         name: "E-Stamp Duty System",
         description:
-          "High-reliability financial system integrating with Thailand Revenue Department APIs for tax processing using Java. Automated reporting and email notifications.",
+          "High-reliability financial system integrating with Thailand Revenue Department APIs.",
+        contribution:
+          "Developed a banking system integrating with Thailand Revenue Department (RD) APIs for tax payment processing, reporting, and automated email notifications using Java.",
         image: "/projects/placeholder-estamp-flow.png",
         tech: ["Java", "RD API", "Reporting"],
       },
       {
-        name: "Sherry Project & Kentico CMS",
+        name: "Sherry Project (Internal)",
         description:
-          "Reverse-engineered a legacy VB.NET system into a modern Windows Forms application. Managed multiple Kentico CMS end-of-life migrations.",
-        image: "/projects/placeholder-sherry-migration.png",
-        tech: ["VB.NET → WinForms", "Kentico CMS", ".NET"],
+          "Internal tool modernization using Python and .NET frameworks.",
+        contribution:
+          "Reverse-engineered a legacy VB.NET system and rebuilt it as a modern Windows Forms application based on observed system behavior and business workflows.",
+        image: "/projects/placeholder-sherry-app.png",
+        tech: ["VB.NET → WinForms", ".NET"],
+      },
+      {
+        name: "Kentico CMS Platform",
+        description:
+          "Content Management Systems and lead generation for major Krungsri entity cards (Lotus's Money, First Choice, Krungsri Consumer, Central The 1 Card).",
+        contribution:
+          "Developed, customized, and maintained multiple Kentico CMS-based systems, including code-level enhancements and CMS migrations driven by End-of-Life requirements.",
+        image: "/projects/placeholder-kentico-cms.png",
+        tech: ["Kentico CMS", ".NET", "C#"],
       },
     ],
   },
@@ -188,11 +204,31 @@ export const projectGroups: ProjectGroup[] = [
     category: "High-Volume Commerce",
     items: [
       {
-        name: "ChocoPOS & ChocoBCRM",
+        name: "ChocoPOS",
         description:
-          "Architected comprehensive POS and CRM applications, integrating seamlessly with Flutter frontend teams. Built a merchant administration platform supporting store management and inventory.",
-        image: "/projects/placeholder-chocopos-dash.png",
+          "Comprehensive Point-of-Sale ecosystem (Web Application & API).",
+        contribution:
+          "Architected sales functionalities and backend APIs, integrating seamlessly with the Flutter mobile application team.",
+        image: "/projects/placeholder-chocopos.png",
         tech: ["C#", ".NET", "SQL Server", "Flutter integration"],
+      },
+      {
+        name: "ChocoCRM",
+        description:
+          "End-to-end CRM ecosystem supporting end-customers via Mobile Apps and business partners via Desktop & iPad Mini.",
+        contribution:
+          "Oversaw .NET projects for user interfaces, admin apps, and web-based portals.",
+        image: "/projects/placeholder-chococrm.png",
+        tech: ["C#", ".NET", "SQL Server"],
+      },
+      {
+        name: "ChocoBCRM Platform",
+        description:
+          "Backend back-office platform used to centrally manage merchant operations.",
+        contribution:
+          "Managed Brand CRM, optimizing corporate projects focusing on privileges, customer relations, permissions, and inventory.",
+        image: "/projects/placeholder-chocobcrm.png",
+        tech: ["C#", ".NET", "SQL Server"],
       },
     ],
   },

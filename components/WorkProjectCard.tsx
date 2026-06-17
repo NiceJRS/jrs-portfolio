@@ -30,9 +30,17 @@ export default function WorkProjectCard({ project }: { project: WorkProject }) {
       {/* Body */}
       <div className="flex flex-1 flex-col p-6">
         <h4 className="text-base font-semibold text-navy">{project.name}</h4>
-        <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600">
+        <p className="mt-1.5 text-sm leading-relaxed text-slate-500">
           {project.description}
         </p>
+        <div className="mt-3 border-l-2 border-accent/30 pl-3">
+          <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+            My Contribution
+          </p>
+          <p className="mt-1 flex-1 text-sm leading-relaxed text-slate-600">
+            {project.contribution}
+          </p>
+        </div>
         <div className="mt-4 flex flex-wrap gap-2">
           {project.tech.map((t) => (
             <span
