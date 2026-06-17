@@ -209,7 +209,7 @@ export const projectGroups: ProjectGroup[] = [
           "Comprehensive Point-of-Sale ecosystem (Web Application & API).",
         contribution:
           "Architected sales functionalities and backend APIs, integrating seamlessly with the Flutter mobile application team.",
-        image: "/projects/placeholder-chocopos.png",
+        image: "https://chococrm.com/wp-content/uploads/2024/03/Group-99508_web-1024x790.webp",
         tech: ["C#", ".NET", "SQL Server", "Flutter integration"],
       },
       {
@@ -218,7 +218,7 @@ export const projectGroups: ProjectGroup[] = [
           "End-to-end CRM ecosystem supporting end-customers via Mobile Apps and business partners via Desktop & iPad Mini.",
         contribution:
           "Oversaw .NET projects for user interfaces, admin apps, and web-based portals.",
-        image: "/projects/placeholder-chococrm.png",
+        image: "https://chococrm.com/wp-content/uploads/2024/03/Group-117228_web-scaled.webp",
         tech: ["C#", ".NET", "SQL Server"],
       },
       {
@@ -227,7 +227,7 @@ export const projectGroups: ProjectGroup[] = [
           "Backend back-office platform used to centrally manage merchant operations.",
         contribution:
           "Managed Brand CRM, optimizing corporate projects focusing on privileges, customer relations, permissions, and inventory.",
-        image: "/projects/placeholder-chocobcrm.png",
+        image: "https://chococrm.com/wp-content/uploads/2024/03/Group-119019_web-scaled.webp",
         tech: ["C#", ".NET", "SQL Server"],
       },
     ],
