@@ -6,8 +6,8 @@ export default function ExperienceTimeline() {
   return (
     <Section
       id="experience"
-      eyebrow="Experience & Impact"
-      title="Five years modernizing banking and digital platforms."
+      eyebrow="Career Progression"
+      title="Five years building and modernizing production systems."
       className="bg-slate-50/60"
     >
       <div className="relative">
@@ -24,43 +24,38 @@ export default function ExperienceTimeline() {
                 <div className="rounded-2xl border border-slate-200 bg-white p-8 transition-shadow hover:shadow-lg hover:shadow-slate-200/60">
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                     <h3 className="text-lg font-semibold text-navy">
-                      {exp.role}
+                      {exp.company}
                     </h3>
                     <span className="text-sm font-medium text-slate-500">
                       {exp.period}
+                      {exp.location ? ` · ${exp.location}` : ""}
                     </span>
                   </div>
-                  <p className="mt-1 text-sm font-semibold text-accent">
-                    {exp.company}
-                  </p>
-                  <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                    {exp.context}
-                  </p>
 
-                  <ul className="mt-5 space-y-2">
-                    {exp.highlights.map((h) => (
-                      <li
-                        key={h}
-                        className="flex gap-3 text-sm leading-relaxed text-slate-700"
+                  {/* Role progression */}
+                  <div className="mt-4 space-y-2 border-l-2 border-slate-100 pl-4">
+                    {exp.roles.map((role, ri) => (
+                      <div
+                        key={role.title}
+                        className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between"
                       >
-                        <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent/60" />
-                        {h}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="mt-6 flex flex-wrap gap-4 border-t border-slate-100 pt-5">
-                    {exp.metrics.map((m) => (
-                      <div key={m.label}>
-                        <p className="text-base font-bold text-navy">
-                          {m.value}
-                        </p>
-                        <p className="text-xs uppercase tracking-wide text-slate-500">
-                          {m.label}
-                        </p>
+                        <span
+                          className={`text-sm font-semibold ${
+                            ri === 0 ? "text-accent" : "text-slate-600"
+                          }`}
+                        >
+                          {role.title}
+                        </span>
+                        <span className="text-xs text-slate-400">
+                          {role.period}
+                        </span>
                       </div>
                     ))}
                   </div>
+
+                  <p className="mt-4 text-sm leading-relaxed text-slate-700">
+                    {exp.details}
+                  </p>
                 </div>
               </div>
             </Reveal>

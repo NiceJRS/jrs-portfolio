@@ -13,3 +13,15 @@ Order matches the `images` arrays in `data/content.ts` — first is the cover.
 | AI Risk & Test Recommendation  | `ai-risk-home.png`, `ai-risk-calculation.png`, `ai-risk-data-test.png` |
 
 Recommended size: ~1600×1000 (16:10), PNG or JPG. Larger is fine — cards crop to fit.
+
+## Key Projects placeholders (optional)
+
+The "Key Projects" gallery cards show a styled placeholder until you drop these
+in. 16:9 works best here.
+
+| Filename                              | Project                       |
+| ------------------------------------- | ----------------------------- |
+| `placeholder-wemerchant-arch.png`     | Krungsri WeMerchant Platform  |
+| `placeholder-estamp-flow.png`         | E-Stamp Duty System           |
+| `placeholder-sherry-migration.png`    | Sherry Project & Kentico CMS  |
+| `placeholder-chocopos-dash.png`       | ChocoPOS & ChocoBCRM          |

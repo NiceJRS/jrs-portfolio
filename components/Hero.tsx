@@ -26,20 +26,24 @@ export default function Hero() {
             {profile.name}
           </p>
 
-          <h1 className="max-w-4xl text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
-            {profile.headline}
+          <h1 className="max-w-4xl text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+            {profile.role}
           </h1>
 
-          <p className="mt-6 max-w-2xl text-lg text-slate-300">
+          <p className="mt-5 max-w-2xl text-xl font-medium text-slate-200 sm:text-2xl">
+            {profile.headline}
+          </p>
+
+          <p className="mt-4 max-w-2xl text-base text-slate-400">
             {profile.subtext}
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a
-              href="#projects"
+              href="#featured"
               className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-light"
             >
-              View Projects
+              View My Work
               <ArrowRight
                 size={18}
                 className="transition-transform group-hover:translate-x-1"

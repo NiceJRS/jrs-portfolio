@@ -7,9 +7,10 @@ import {
 
 export const profile = {
   name: "Jaroensak Jantaranimi",
-  headline: "Translating Business Strategy into Scalable Technology Solutions.",
+  role: "Product-Minded Software Engineer",
+  headline: "Bridging the gap between business strategy and scalable engineering.",
   subtext:
-    "Software Engineer & Tech Business Analyst specializing in Banking Transformation.",
+    "5 years of experience building, modernizing, and scaling enterprise systems for banking, CRM, and digital platforms.",
   location: "Bangkok, Thailand",
   email: "jaroensak.nice@gmail.com",
   phone: "098-449-9858",
@@ -26,118 +27,119 @@ export type CoreValue = {
 export const coreValues: CoreValue[] = [
   {
     icon: Lightbulb,
-    title: "Strategic Thinking",
+    title: "Business Analysis & Strategy",
     description:
-      "Gather and translate business requirements into clear system designs. As-Is / To-Be gap analysis that aligns engineering work with real business outcomes.",
+      "Gathering requirements and translating business needs into clear, actionable system designs. As-Is / To-Be gap analysis that aligns engineering work with real business outcomes.",
   },
   {
     icon: Layers,
     title: "Technical Architecture",
     description:
-      "Design scalable system integrations, API specifications, and data flows. Modernize legacy banking platforms with modern .NET, microservices, and cloud.",
+      "Designing scalable system integrations, API specifications, and establishing best practices for backend structures. Modernize legacy banking platforms with modern .NET, microservices, and cloud.",
   },
   {
     icon: Rocket,
     title: "End-to-End Delivery",
     description:
-      "Own features from requirement definition through UAT to production rollout. Bridge stakeholders, product, and engineering in high-availability environments.",
+      "Owning the full software lifecycle from As-Is / To-Be analysis to UAT and production rollout. Bridge stakeholders, product, and engineering in high-availability environments.",
   },
 ];
 
+export type RoleEntry = { title: string; period: string };
+
 export type Experience = {
-  role: string;
   company: string;
-  period: string;
-  context: string;
-  highlights: string[];
-  metrics: { value: string; label: string }[];
+  period: string; // overall span at the company
+  roles: RoleEntry[]; // newest first; multiple entries show progression
+  location?: string;
+  details: string;
 };
 
 export const experiences: Experience[] = [
   {
-    role: "System Analyst / Software Engineer",
     company: "Ayudhya Capital Services (Krungsri Project)",
     period: "Mar 2024 – Present",
-    context:
-      "Modernizing the Krungsri WeMerchant legacy merchant banking platform — onboarding and installment services.",
-    highlights: [
-      "Led requirement analysis with business stakeholders to modernize the merchant banking platform.",
-      "Translated business needs into functional requirements, system flows, and API specifications.",
-      "Conducted As-Is vs To-Be analysis to identify gaps and drive digital transformation.",
-      "Designed system integrations and data flows for financial services and merchant onboarding.",
-      "Supported UAT planning, validation, and system rollout in a high-availability environment.",
+    location: "Bangkok, Thailand",
+    roles: [
+      { title: "System Analyst / Software Engineer", period: "Mar 2024 – Present" },
     ],
-    metrics: [
-      { value: "Legacy → .NET", label: "Platform modernization" },
-      { value: "End-to-end", label: "API spec to rollout" },
-    ],
+    details:
+      "Led requirement analysis and collaborated with business stakeholders to modernize a merchant banking platform. Supported UAT planning, validation, and system rollout in a high-availability environment.",
   },
   {
-    role: "Senior Web Developer / Tech Analyst / Team Lead",
     company: "Choco Card Enterprise Co., Ltd.",
     period: "Jan 2021 – Mar 2024",
-    context:
-      "Led delivery across ChocoCRM, ChocoPOS, and ChocoBCRM — POS, CRM, and merchant operations platforms.",
-    highlights: [
-      "Collaborated with Product Owners, CTO, and business teams to define scope and delivery roadmap.",
-      "Led and mentored a development team of 5–11 members, aligning business and engineering.",
-      "Designed and implemented system architecture and integrations to improve performance and scalability.",
-      "Delivered end-to-end features from requirement definition to production deployment.",
-      "Ensured code quality and best practices through code reviews and technical leadership.",
+    location: "Bangkok, Thailand",
+    roles: [
+      { title: "Senior Web Developer / Team Lead", period: "Jan 2023 – Mar 2024" },
+      { title: "Analyst Web Developer", period: "Oct 2021 – Jan 2023" },
+      { title: "Junior Web Developer", period: "Jan 2021 – Oct 2021" },
     ],
-    metrics: [
-      { value: "5–11", label: "Developers led" },
-      { value: "High-volume", label: "Transaction platforms" },
-    ],
+    details:
+      "Led a team of 5–11 developers. Delivered end-to-end features from requirement definition to production deployment for POS, CRM, and merchant operations platforms.",
   },
   {
-    role: "Developer (Intern → Full-time)",
     company: "Cube SoftTech Co., Ltd.",
     period: "Aug 2019 – May 2020",
-    context:
-      "Built and maintained web and backend systems for business operations.",
-    highlights: [
-      "Developed and maintained web and backend systems using Java, Struts, Hibernate, and MySQL.",
-      "Delivered stable, scalable system features supporting business operations.",
-      "Built the company website using PHP and Bootstrap.",
+    location: "Bangkok, Thailand",
+    roles: [
+      { title: "Developer (Intern → Full-time)", period: "Aug 2019 – May 2020" },
     ],
-    metrics: [
-      { value: "Java / Spring", label: "Backend stack" },
-      { value: "Full-stack", label: "Web delivery" },
-    ],
+    details:
+      "Developed web and backend systems using Java, Struts, Hibernate, and MySQL.",
   },
 ];
 
-export type Project = {
+export type WorkProject = {
   name: string;
-  category: string;
   description: string;
+  image: string; // placeholder path under /public
+  tech: string[];
 };
 
-export const projects: Project[] = [
+export type ProjectGroup = {
+  category: string;
+  items: WorkProject[];
+};
+
+export const projectGroups: ProjectGroup[] = [
   {
-    name: "Krungsri WeMerchant Platform",
-    category: "Banking",
-    description:
-      "Modernized a legacy merchant platform supporting onboarding and installment services. Translated business processes into scalable system workflows and APIs.",
+    category: "Banking & Enterprise",
+    items: [
+      {
+        name: "Krungsri WeMerchant Platform",
+        description:
+          "Modernized a legacy merchant platform supporting onboarding and installment services. Rebuilt using modern .NET technologies.",
+        image: "/projects/placeholder-wemerchant-arch.png",
+        tech: [".NET", "C#", "REST APIs"],
+      },
+      {
+        name: "E-Stamp Duty System",
+        description:
+          "High-reliability financial system integrating with Thailand Revenue Department APIs for tax processing using Java. Automated reporting and email notifications.",
+        image: "/projects/placeholder-estamp-flow.png",
+        tech: ["Java", "RD API", "Reporting"],
+      },
+      {
+        name: "Sherry Project & Kentico CMS",
+        description:
+          "Reverse-engineered a legacy VB.NET system into a modern Windows Forms application. Managed multiple Kentico CMS end-of-life migrations.",
+        image: "/projects/placeholder-sherry-migration.png",
+        tech: ["VB.NET → WinForms", "Kentico CMS", ".NET"],
+      },
+    ],
   },
   {
-    name: "E-Stamp Duty System",
-    category: "Banking Integration",
-    description:
-      "High-reliability financial system integrating with Thailand Revenue Department APIs. Ensured data accuracy, compliance, and secure transaction processing.",
-  },
-  {
-    name: "ChocoPOS",
-    category: "Payment & Transactions",
-    description:
-      "POS system used by merchants. Translated business needs into system design and backend services; integrated Flutter frontend with backend APIs for transactions.",
-  },
-  {
-    name: "ChocoBCRM Platform",
-    category: "Merchant Operations",
-    description:
-      "Merchant administration platform supporting store management, inventory, and operations. Improved operational efficiency and business workflows.",
+    category: "High-Volume Commerce",
+    items: [
+      {
+        name: "ChocoPOS & ChocoBCRM",
+        description:
+          "Architected comprehensive POS and CRM applications, integrating seamlessly with Flutter frontend teams. Built a merchant administration platform supporting store management and inventory.",
+        image: "/projects/placeholder-chocopos-dash.png",
+        tech: ["C#", ".NET", "SQL Server", "Flutter integration"],
+      },
+    ],
   },
 ];
 
