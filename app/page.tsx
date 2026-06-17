@@ -5,6 +5,7 @@ import ExperienceTimeline from "@/components/ExperienceTimeline";
 import Toolkit from "@/components/Toolkit";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import Projects from "@/components/Projects";
+import EducationAwards from "@/components/EducationAwards";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -18,6 +19,7 @@ export default function Home() {
       <Toolkit />
       <FeaturedProjects />
       <Projects />
+      <EducationAwards />
       <Contact />
       <Footer />
     </main>

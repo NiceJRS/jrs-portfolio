@@ -69,6 +69,12 @@ export default function ExperienceTimeline() {
                         {exp.details}
                       </p>
 
+                      {exp.award && (
+                        <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-amber-50 px-3 py-1.5 text-xs font-medium text-amber-700 ring-1 ring-amber-200">
+                          {exp.award}
+                        </div>
+                      )}
+
                       {hasDetail && (
                         <button
                           onClick={() => setOpenIndex(isOpen ? null : i)}

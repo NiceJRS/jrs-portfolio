@@ -55,6 +55,7 @@ export type Experience = {
   roles: RoleEntry[];
   location?: string;
   details: string;
+  award?: string;
   responsibilities?: string[];
   keyProjects?: KeyProject[];
 };
@@ -112,6 +113,7 @@ export const experiences: Experience[] = [
     ],
     details:
       "Led a team of 5–11 developers. Delivered end-to-end features from requirement definition to production deployment for POS, CRM, and merchant operations platforms.",
+    award: '🏆 "Best IT 2023" – Awarded during the final year.',
     responsibilities: [
       "Led and managed a team of 5–6 developers, providing mentorship, code reviews, and guiding scalable backend and frontend solutions.",
       "Steered robust POS and CRM applications, collaborating with Flutter teams and architecting sales functionalities, CRM modules, and back-office configurations.",
@@ -389,3 +391,18 @@ export const education = {
   school: "Rangsit University",
   honors: "First-Class Honors — GPA 3.95",
 };
+
+export type Award = {
+  title: string;
+  organization: string;
+  description: string;
+};
+
+export const awards: Award[] = [
+  {
+    title: "🏆 Best IT 2023",
+    organization: "Choco Card Enterprise Co., Ltd.",
+    description:
+      "Recognized for your dedication, passion, and hard work.",
+  },
+];
