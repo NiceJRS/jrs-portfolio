@@ -47,12 +47,16 @@ export const coreValues: CoreValue[] = [
 
 export type RoleEntry = { title: string; period: string };
 
+export type KeyProject = { name: string; detail: string };
+
 export type Experience = {
   company: string;
-  period: string; // overall span at the company
-  roles: RoleEntry[]; // newest first; multiple entries show progression
+  period: string;
+  roles: RoleEntry[];
   location?: string;
   details: string;
+  responsibilities?: string[];
+  keyProjects?: KeyProject[];
 };
 
 export const experiences: Experience[] = [
@@ -65,6 +69,37 @@ export const experiences: Experience[] = [
     ],
     details:
       "Led requirement analysis and collaborated with business stakeholders to modernize a merchant banking platform. Supported UAT planning, validation, and system rollout in a high-availability environment.",
+    responsibilities: [
+      "Developed and maintained enterprise-scale systems for banking and internal platforms.",
+      "Worked across backend and frontend development with strong involvement in system analysis and solution design.",
+      "Designed and maintained API specifications, system flow diagrams, and technical documentation to support development and cross-team alignment.",
+      "Analyzed legacy systems and translated business requirements into modern, maintainable architectures.",
+      "Revamped system architecture to align with business goals and project objectives.",
+      "Collaborated closely with business stakeholders, QA, and cross-functional teams to deliver production-ready solutions.",
+      "Supported system migration, deployment, and post-release issue resolution in live environments.",
+    ],
+    keyProjects: [
+      {
+        name: "Krungsri WeMerchant Platform",
+        detail:
+          "Rebuilt a legacy system by analyzing existing business logic and re-implementing the platform from scratch using modern .NET technologies.",
+      },
+      {
+        name: "Kentico CMS – Multi-Project Development & Migration",
+        detail:
+          "Developed, customized, and maintained multiple Kentico CMS-based systems, including code-level enhancements and CMS migrations driven by End-of-Life requirements.",
+      },
+      {
+        name: "E-Stamp Duty System",
+        detail:
+          "Developed a banking system integrating with Thailand Revenue Department (RD) APIs for tax payment processing, reporting, and automated email notifications using Java.",
+      },
+      {
+        name: "Sherry Project (Internal System)",
+        detail:
+          "Reverse-engineered a legacy VB.NET system and rebuilt it as a modern Windows Forms application based on observed system behavior and business workflows.",
+      },
+    ],
   },
   {
     company: "Choco Card Enterprise Co., Ltd.",
@@ -77,6 +112,26 @@ export const experiences: Experience[] = [
     ],
     details:
       "Led a team of 5–11 developers. Delivered end-to-end features from requirement definition to production deployment for POS, CRM, and merchant operations platforms.",
+    responsibilities: [
+      "Led and managed a team of 5–6 developers, providing mentorship, code reviews, and guiding scalable backend and frontend solutions.",
+      "Steered robust POS and CRM applications, collaborating with Flutter teams and architecting sales functionalities, CRM modules, and back-office configurations.",
+      "Spearheaded core engine conceptualization and implementation for seamless application integration.",
+      "Ensured exemplary code quality and focused primarily on backend API development.",
+      "Collaborated closely with Product Owners, UX/UI, and Business teams to align development with business objectives.",
+      "Built best practices for backend project structures to ensure efficiency and maintainability.",
+      "Oversaw .NET projects for user interfaces, admin apps, and web-based portals.",
+      "Managed Brand CRM, optimizing corporate projects focusing on privileges, customer relations, permissions, and inventory.",
+      "Researched and implemented new technologies to meet current industry standards.",
+      "Planned and assigned tasks to squad members.",
+      "Developed POS/CRM Platform and back-office to help businesses manage customer interactions and analyze customer data.",
+    ],
+    keyProjects: [
+      {
+        name: "ChocoPOS & ChocoBCRM Platform",
+        detail:
+          "Architected and delivered end-to-end POS and CRM applications with Flutter team integration, supporting store management, merchant administration, and inventory operations.",
+      },
+    ],
   },
   {
     company: "Cube SoftTech Co., Ltd.",
