@@ -183,7 +183,6 @@ export const projectGroups: ProjectGroup[] = [
         contribution:
           "Developed a banking system integrating with Thailand Revenue Department (RD) APIs for tax payment processing, reporting, and automated email notifications using Java.",
         image: "/projects/e-stamp-duty.jfif",
-        imageFit: "contain",
         tech: ["Java", "RD API", "Reporting"],
       },
       {
@@ -193,7 +192,6 @@ export const projectGroups: ProjectGroup[] = [
         contribution:
           "Reverse-engineered a legacy VB.NET system and rebuilt it as a modern Windows Forms application based on observed system behavior and business workflows.",
         image: "/projects/sherry-project.jfif",
-        imageFit: "contain",
         tech: ["VB.NET → WinForms", ".NET", "Python"],
       },
       {
