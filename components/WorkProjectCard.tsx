@@ -16,7 +16,7 @@ export default function WorkProjectCard({ project }: { project: WorkProject }) {
           <img
             src={project.image}
             alt={`${project.name} preview`}
-            className="h-full w-full object-cover"
+            className={`h-full w-full ${project.imageFit === "contain" ? "object-contain p-6" : "object-cover"}`}
             onError={() => setImgOk(false)}
           />
         ) : (

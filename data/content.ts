@@ -152,6 +152,7 @@ export type WorkProject = {
   description: string;
   contribution: string;
   image: string;
+  imageFit?: "cover" | "contain";
   tech: string[];
   links?: WorkProjectLink[];
 };
@@ -200,6 +201,7 @@ export const projectGroups: ProjectGroup[] = [
         contribution:
           "Developed, customized, and maintained multiple Kentico CMS-based systems, including code-level enhancements and CMS migrations driven by End-of-Life requirements.",
         image: "/projects/placeholder-kentico-cms.png",
+        imageFit: "contain",
         tech: ["Kentico CMS", ".NET", "C#"],
         links: [
           { label: "Lotus's Money", href: "https://www.lotussmoney.com/" },
