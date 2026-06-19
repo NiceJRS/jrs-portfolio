@@ -321,7 +321,7 @@ export const featuredProjects: FeaturedProject[] = [
     ],
     links: [
       {
-        label: "Live Demo",
+        label: "Visit Live Site",
         href: "https://www.ryherbgarden.com/",
         variant: "primary",
       },
